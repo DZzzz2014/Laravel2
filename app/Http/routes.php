@@ -18,11 +18,15 @@ Route::get('/{id?}', function ($id='index') {
 */
 Route::group(['middleware'=>array('web','auth')], function(){
  Route::get('/home', 'HomeController@index');
+ 
 });
 
 
 
 Route::group(['middleware'=>'web'], function(){
 	Route::auth();
+	Route::controllers([
+		'test'=>'TestController'
+	]);
 	Route::get('/{id?}', array('uses'=> 'BaseController@getIndex'))->where('id', '[0-9 A-z_]+');
 });
