@@ -1,0 +1,22 @@
+<?php
+return array(
+	'title'=>'Products',
+	'single'=>'Product',
+	'model'=>'App\Product',
+	'columns'=>array(
+		'id',
+		'name',
+		'description'
+	),
+	'filters'=>array(
+		'id',
+		'name'=>array('title'=>'Название'),
+		'description'
+	),
+	'edit_fields'=>array(
+		'name'=>array(
+			'title'=>'Наименование'
+		),
+		'description'
+	)
+);
